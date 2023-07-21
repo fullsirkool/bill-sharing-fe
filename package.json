@@ -13,6 +13,7 @@
     "nuxt": "^3.4.1"
   },
   "dependencies": {
-    "@nuxtjs/tailwindcss": "^6.6.6"
+    "@nuxtjs/tailwindcss": "^6.6.6",
+    "nuxt-vue3-google-signin": "^0.0.8"
   }
 }
