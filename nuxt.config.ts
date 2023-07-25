@@ -1,5 +1,6 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
+  pages: true,
   css: ["@/assets/css/style.css"],
 
   postcss: {
@@ -16,6 +17,7 @@ export default defineNuxtConfig({
     public: {
       GOOGLE_CLIENT_ID: process.env.GOOGLE_CLIENT_ID,
       GOOGLE_INFOR_URL: process.env.GOOGLE_INFOR_URL,
+      BASE_URL: process.env.BASE_URL
     },
   },
 });
