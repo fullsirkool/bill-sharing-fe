@@ -13,7 +13,7 @@ import {
 } from "vue3-google-signin";
 const handleLoginSuccess = async (response: CredentialResponse) => {
   const { credential } = response;
-  const {GOOGLE_INFOR_URL} = useRuntimeConfig()
+  const {BASE_URL} = useRuntimeConfig()
   console.log("Access Token", credential, response);
   if (credential) {
     // const user = await $fetch("/api/google-login", {
@@ -23,11 +23,8 @@ const handleLoginSuccess = async (response: CredentialResponse) => {
     //   }
     // })
     // console.log('user:', user)
-    const profile = await $fetch(GOOGLE_INFOR_URL, {
-      method: "GET",
-      params: {
-        id_token: credential
-      }
+    const profile = await useFetch(`${BASE_URL}/auth/signin-google/${credential}`, {
+      method: "POST",
     })
     console.log('profile:', profile)
   }
