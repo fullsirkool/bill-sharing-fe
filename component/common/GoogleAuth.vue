@@ -23,7 +23,7 @@ const handleLoginSuccess = async (response: CredentialResponse) => {
     //   }
     // })
     // console.log('user:', user)
-    const profile = await useFetch(`${BASE_URL}/auth/signin-google/${credential}`, {
+    const profile = await useFetch(`${BASE_URL}auth/signin-google/${credential}`, {
       method: "POST",
     })
     console.log('profile:', profile)
