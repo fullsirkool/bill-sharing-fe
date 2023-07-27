@@ -16,17 +16,12 @@ const handleLoginSuccess = async (response: CredentialResponse) => {
   const {BASE_URL} = useRuntimeConfig()
   console.log("Access Token", credential, response);
   if (credential) {
-    // const user = await $fetch("/api/google-login", {
-    //   method: "POST",
-    //   body: {
-    //     token: credential
-    //   }
-    // })
-    // console.log('user:', user)
-    const profile = await useFetch(`${BASE_URL}auth/signin-google/${credential}`, {
+    const profile = await useFetch(`${BASE_URL}auth/signin-google`, {
       method: "POST",
+      params: {
+        token: credential
+      }
     })
-    console.log('profile:', profile)
   }
 };
 
